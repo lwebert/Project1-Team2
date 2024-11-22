@@ -3,20 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Movie Critic</title>
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 
 
 <body>
 
-    <header>
+    <header class="header">
+        <h1>My Movie Critic</h1>
 
-
-        
     </header>
 
 
-    
+    <section id="enter-movie">
+        <form class="">
+            <input id="new-movie" type="text" value="Add new movie title" />
+            <input id="submit" type="button" value="Submit" />
+        </form>
+
+    </section>
+
+    <main>
+
+
+    <section class="nav-bar">
+        <table>
+            <thead>
+                <tr>
+                  <th scope="col">name</th>
+                  <th scope="col">rating</th>
+                  <th scope="col">genre</th>
+                </tr>
+            </thead>
+
+            <tbody>
+               <tr id="movie-1">
+                <td id="name-1"></td>
+                <td id="rating-1"></td>    
+                <td id="genre-1"></td>
+               </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    </main>
+
+    <footer class="footer">
+
+
+    </footer>
+
+    <script src="./script.js"></script>
 </body>
 </html>
