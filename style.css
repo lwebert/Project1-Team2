@@ -1,0 +1,56 @@
+/* This comments are only for reference.
+
+.lesson {
+
+width: 200px;
+height: 200px;
+
+}
+
+*/ 
+
+* {
+
+    font-family: cursive;
+}
+
+body {
+  
+background-color: rgb(37, 36, 36);
+
+}
+
+header, footer {
+
+line-height: 100px;
+color: white;   
+background-color: grey;
+
+}
+
+
+main {
+    
+    margin-top: 50px;
+    color: white;
+    
+}
+
+section {
+
+    margin-top: 50px;
+   
+}
+
+
+footer {
+
+    margin-top: 100px;
+    font-size: 20px;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    height: 2.5rem;
+}
+
