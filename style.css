@@ -8,8 +8,11 @@ margin: 0 auto;
 display: block;
 display: inline;
 display: none;
+display: flex;
 list-style-type: none;
-
+vertical-align: top;
+text-decoration: none;
+flex-wrap: wrap;
 }
 
 */ 
