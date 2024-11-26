@@ -76,4 +76,24 @@ footer {
 .star.filled {
     color: gold;
  }
+
+
+ h2:hover {
+
+    background-color: #772014;
+    transition: 0.1s;
+    color: #fff;
+ }
+
+ label {
+
+    
+    transition: background-color 0.5s;
+ }
+
+ label:hover {
+
+    background-color: #772014;
+ }
+
  
