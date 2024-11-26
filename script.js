@@ -1,3 +1,4 @@
+//General local storage
 //Function to read local storage
 function readLocalStorage() {
     let storage = JSON.parse(localStorage.getItem('movies')) //using local storage key name "movies"
@@ -16,5 +17,22 @@ function storeLocalStorage(movie) {
 }
 
 
+
+
+//functions to read & store local storage for new movie name index.html to input.html
+function readLocalStorageNewTitle() {
+    let title = JSON.parse(localStorage.getItem('newtitle')) //using local storage key name "newtitle"
+
+    if (title === null) {
+        title = [];
+    }
+    return title;
+}
+
+function storeLocalStorageNewTitle(title) {
+    let newTitle = readLocalStorageNewTitle(); //To get a copy of the array of movies from local storage
+    newTitle.push(title); //Add new movie to array
+    localStorage.setItem('newtitle', JSON.stringify(newTitle)); //Re-save the updated array to local storage
+}
 
 
