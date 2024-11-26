@@ -1,7 +1,7 @@
 const stars = document.querySelectorAll('.star');
 
         stars.forEach(star => {
-            star.addEventListener('click', function() {
+            star.addEventListener("click", function() {
                 const ratingValue = this.dataset.value;
                 fillStars(ratingValue);
             });
