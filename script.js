@@ -1,23 +1,3 @@
-const stars = document.querySelectorAll('.star');
-
-stars.forEach(star => {
-    star.addEventListener('click', function () {
-        const ratingValue = this.dataset.value;
-        fillStars(ratingValue);
-    });
-});
-
-function fillStars(ratingValue) {
-    stars.forEach(star => {
-        if (star.dataset.value <= ratingValue) {
-            star.classList.add('filled');
-        } else {
-            star.classList.remove('filled');
-        }
-    });
-}
-
-
 //Function to read local storage
 function readLocalStorage() {
     let storage = JSON.parse(localStorage.getItem('movies')) //using local storage key name "movies"
@@ -30,17 +10,11 @@ function readLocalStorage() {
 
 //Function to store local storage
 function storeLocalStorage(movie) {
-    let moviedata = readLocalStorage();
-    
+    let moviedata = readLocalStorage(); //To get a copy of the array of movies from local storage
+    moviedata.push(movie); //Add new movie to array
+    localStorage.setItem('movies', JSON.stringify(moviedata)); //Re-save the updated array to local storage
 }
 
-//Redirect pages
-//index.html Submit button --> input.html
-// const IndexSubmitEl =
 
-//input.html Submit button --> index.html
 
-//movieinfo.html Edit button --> input.html
-
-//movieinfo.html Home button --> index.html
 
