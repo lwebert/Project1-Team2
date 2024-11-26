@@ -54,3 +54,13 @@ footer {
     height: 2.5rem;
 }
 
+.star {
+    cursor: pointer;
+    font-size: 24px;
+    color: gray;      
+}
+
+.star.filled {
+    color: gold;
+ }
+ 
