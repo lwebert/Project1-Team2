@@ -1,37 +1,38 @@
-const stars = document.querySelectorAll('.star');
-
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                const ratingValue = this.dataset.value;
-                fillStars(ratingValue);
-            });
-        });
-
-        function fillStars(ratingValue) {
-            stars.forEach(star => {
-                if (star.dataset.value <= ratingValue) {
-                    star.classList.add('filled');
-                } else {
-                    star.classList.remove('filled');
-                }
-            });
-        }
-
+//General local storage
 //Function to read local storage
 function readLocalStorage() {
     let storage = JSON.parse(localStorage.getItem('movies')) //using local storage key name "movies"
+
+    if (storage === null) {
+        storage = [];
+    }
+    return storage;
 }
 
 //Function to store local storage
+function storeLocalStorage(movie) {
+    let moviedata = readLocalStorage(); //To get a copy of the array of movies from local storage
+    moviedata.push(movie); //Add new movie to array
+    localStorage.setItem('movies', JSON.stringify(moviedata)); //Re-save the updated array to local storage
+}
 
 
-//Redirect pages
-//index.html Submit button --> input.html
-// const IndexSubmitEl = 
 
-//input.html Submit button --> index.html
 
-//movieinfo.html Edit button --> input.html
+//functions to read & store local storage for new movie name index.html to input.html
+function readLocalStorageNewTitle() {
+    let title = JSON.parse(localStorage.getItem('newtitle')) //using local storage key name "newtitle"
 
-//movieinfo.html Home button --> index.html
+    if (title === null) {
+        title = [];
+    }
+    return title;
+}
+
+function storeLocalStorageNewTitle(title) {
+    let newTitle = readLocalStorageNewTitle(); //To get a copy of the array of movies from local storage
+    newTitle.push(title); //Add new movie to array
+    localStorage.setItem('newtitle', JSON.stringify(newTitle)); //Re-save the updated array to local storage
+}
+
 
