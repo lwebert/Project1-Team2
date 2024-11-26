@@ -18,9 +18,9 @@ const stars = document.querySelectorAll('.star');
         }
 
 //Function to read local storage
-//function readLocalStorage() {
-//    let storage = JSON.parse(localStorage.getItem('')) //using local storage key name ""
-//}
+function readLocalStorage() {
+    let storage = JSON.parse(localStorage.getItem('movies')) //using local storage key name "movies"
+}
 
 //Function to store local storage
 
