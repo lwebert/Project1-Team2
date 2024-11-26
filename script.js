@@ -1,33 +1,42 @@
 const stars = document.querySelectorAll('.star');
 
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                const ratingValue = this.dataset.value;
-                fillStars(ratingValue);
-            });
-        });
+stars.forEach(star => {
+    star.addEventListener('click', function () {
+        const ratingValue = this.dataset.value;
+        fillStars(ratingValue);
+    });
+});
 
-        function fillStars(ratingValue) {
-            stars.forEach(star => {
-                if (star.dataset.value <= ratingValue) {
-                    star.classList.add('filled');
-                } else {
-                    star.classList.remove('filled');
-                }
-            });
+function fillStars(ratingValue) {
+    stars.forEach(star => {
+        if (star.dataset.value <= ratingValue) {
+            star.classList.add('filled');
+        } else {
+            star.classList.remove('filled');
         }
+    });
+}
+
 
 //Function to read local storage
 function readLocalStorage() {
     let storage = JSON.parse(localStorage.getItem('movies')) //using local storage key name "movies"
+
+    if (storage === null) {
+        storage = [];
+    }
+    return storage;
 }
 
 //Function to store local storage
-
+function storeLocalStorage(movie) {
+    let moviedata = readLocalStorage();
+    
+}
 
 //Redirect pages
 //index.html Submit button --> input.html
-// const IndexSubmitEl = 
+// const IndexSubmitEl =
 
 //input.html Submit button --> index.html
 
