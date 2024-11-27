@@ -1,38 +1,38 @@
 const stars = document.querySelectorAll('.star');
-    let rating = 0;
+let rating = 0;
 
-    stars.forEach(star => {
-      star.addEventListener('click', () => {
+stars.forEach(star => {
+    star.addEventListener('click', () => {
         rating = parseInt(star.getAttribute('data-value'));
         fillStars(rating);
         localStorage.setItem('rating', rating);
-      });
-
-      star.addEventListener('mouseover', () => {
-        fillStars(parseInt(star.getAttribute('data-value')));
-      });
-
-      star.addEventListener('mouseout', () => {
-        fillStars(rating);
-      });
     });
 
-    function fillStars(value) {
-      stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+        fillStars(parseInt(star.getAttribute('data-value')));
+    });
+
+    star.addEventListener('mouseout', () => {
+        fillStars(rating);
+    });
+});
+
+function fillStars(value) {
+    stars.forEach(star => {
         if (parseInt(star.getAttribute('data-value')) <= value) {
-          star.classList.add('filled');
+            star.classList.add('filled');
         } else {
-          star.classList.remove('filled');
+            star.classList.remove('filled');
         }
-      });
-    }
+    });
+}
 
 
 //Load new movie title into input.html based on index.html
 const movieTitleEl = document.querySelector("#enter-movie-title"); //Element in input.html for the movie title
 let newTitle = readLocalStorageNewTitle();
 
-movieTitleEl.setAttribute('value', newTitle[(newTitle.length -1)].newMovieTitle); //automatically set the movie title to the last movie title you stored in local storage from index.html
+movieTitleEl.setAttribute('value', newTitle[(newTitle.length - 1)].newMovieTitle); //automatically set the movie title to the last movie title you stored in local storage from index.html
 
 
 //input.html Submit button --> index.html
@@ -42,7 +42,7 @@ InputSubmitEl.addEventListener('click', function (event) {
     event.preventDefault();
 
     let movieTitle = document.querySelector("#enter-movie-title").value;
-    // let movieRating = document.querySelector("#movie-rating").value;
+    // let movieRating = document.querySelector("#movie-rating").value;  //LEAVE THIS COMMENTED OUT!
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
 

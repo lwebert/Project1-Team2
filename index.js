@@ -34,7 +34,7 @@ function displaymovies() {
     let movies = readLocalStorage();
     console.log(`Number of movies to display is ${movies.length}.`);
     for (i = 0; i < movies.length; i++) {
-        console.log(movies[i]);
+        // console.log(movies[i]);
 
         //create table elements
         let movienameEl = document.createElement('td');
@@ -51,7 +51,17 @@ function displaymovies() {
         movierow.appendChild(movieratingEl);
         movierow.appendChild(moviegenreEl);
 
-        // movierow.setAttribute('onClick', )
+        movierow.onclick = function () {
+            //LEAVE all of this for now, Lauren is working on making it go to movieinfo.index based on where you click on the table
+            
+            // console.log(movierow);
+            // console.log(movierow.children);
+            // console.log(movierow.children.length);
+            // console.log(movierow.children[2].textContent);
+
+            // storeLocalStorageMovieInfo(movierow);
+            // location.assign("movieinfo.html")
+        };
 
         tableBodyEl.appendChild(movierow);
     }
@@ -60,16 +70,8 @@ function displaymovies() {
 displaymovies();
 
 
-//event listener on table to take it to movieinfo.html
-const tableBodyEl = document.querySelector("#tableBody")
-tableBodyEl.addEventListener('click', function (event) {
-    let moviesdisplayed = document.querySelectorAll("tr");
-    console.log(moviesdisplayed);
-    console.log(moviesdisplayed.childNodes);
 
-    // for (i=0; i<moviesdisplayed; i++) {}
 
-})
 
 
 
@@ -83,10 +85,10 @@ if (savedRating) {
 
 function fillStars(value) {
     stars.forEach(star => {
-      if (parseInt(star.getAttribute('data-value')) <= value) {
-        star.classList.add('filled');
-      } else {
-        star.classList.remove('filled');
-      }
+        if (parseInt(star.getAttribute('data-value')) <= value) {
+            star.classList.add('filled');
+        } else {
+            star.classList.remove('filled');
+        }
     });
 }
