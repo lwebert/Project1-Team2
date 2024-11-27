@@ -42,7 +42,7 @@ function displaymovies() {
         let moviegenreEl = document.createElement('td');
         //update values
         movienameEl.textContent = movies[i].movieTitle;
-        movieratingEl.textContent = "";
+        movieratingEl.innerHTML = "";
         moviegenreEl.textContent = movies[i].movieGenre;
 
         //display in table by creating new table row & appending
