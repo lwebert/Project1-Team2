@@ -1,5 +1,4 @@
 const stars = document.querySelectorAll('.star');
-    let rating = 0;
 const error = document.getElementById('error');
 
     stars.forEach(star => {
