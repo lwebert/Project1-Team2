@@ -42,12 +42,12 @@ InputSubmitEl.addEventListener('click', function (event) {
     event.preventDefault();
 
     let movieTitle = document.querySelector("#enter-movie-title").value;
-    let movieRating = document.querySelector("#movie-rating").value;
+    let movieRating = rating;
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
 
     // if (!movieTitle || !movieRating || !movieGenre || !movieComments) {
-    if (!movieTitle || !movieGenre || !movieComments) {
+    if (!movieTitle || !movieRating|| !movieGenre || !movieComments) {
         //add pop-up saying to enter all information before submitting
     
         error.textContent = 'Please fill out all fields.';
@@ -59,7 +59,7 @@ InputSubmitEl.addEventListener('click', function (event) {
     else {
         let movie = {
             // movieTitle, movieRating, movieGenre, movieComments
-            movieTitle, movieGenre, movieComments
+            movieTitle, movieRating, movieGenre, movieComments
         };
 
         storeLocalStorage(movie); //

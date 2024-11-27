@@ -46,7 +46,7 @@ function displaymovies() {
         let moviegenreEl = document.createElement('td');
         //update values
         movienameEl.textContent = movies[i].movieTitle;
-        movieratingEl.innerHTML = "";
+        movieratingEl.textContent = movies[i].movieRating, "★";
         moviegenreEl.textContent = movies[i].movieGenre;
 
         //display in table by creating new table row & appending
@@ -58,22 +58,4 @@ function displaymovies() {
         tableBodyEl.appendChild(movierow);
     }
 }
-
 displaymovies();
-
-const stars = document.querySelectorAll('.star');
-const savedRating = localStorage.getItem('rating');
-if (savedRating) {
-  rating = parseInt(savedRating);
-  fillStars(rating);
-}
-
-function fillStars(value) {
-    stars.forEach(star => {
-      if (parseInt(star.getAttribute('data-value')) <= value) {
-        star.classList.add('filled');
-      } else {
-        star.classList.remove('filled');
-      }
-    });
-}
