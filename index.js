@@ -10,8 +10,8 @@ IndexSubmitEl.addEventListener('click', function (event) {
         //add pop-up saying to enter movie title!
     }
     else {
-        let movieName = { newMovieTitle };
-        storeLocalStorage(movieName); //
+        let movietitle = { newMovieTitle };
+        storeLocalStorageNewTitle(movietitle); //
 
         location.assign("input.html") //redirect to input.html
     }
