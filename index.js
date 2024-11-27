@@ -38,7 +38,7 @@ function displaymovies() {
     let movies = readLocalStorage();
     console.log(`Number of movies to display is ${movies.length}.`);
     for (i = 0; i < movies.length; i++) {
-        console.log(movies[i]);
+        // console.log(movies[i]);
 
         //create table elements
         let movienameEl = document.createElement('td');
@@ -55,7 +55,26 @@ function displaymovies() {
         movierow.appendChild(movieratingEl);
         movierow.appendChild(moviegenreEl);
 
+        movierow.onclick = function () {
+            //LEAVE all of this for now, Lauren is working on making it go to movieinfo.index based on where you click on the table
+            
+            // console.log(movierow);
+            // console.log(movierow.children);
+            // console.log(movierow.children.length);
+            // console.log(movierow.children[2].textContent);
+
+            // storeLocalStorageMovieInfo(movierow);
+            // location.assign("movieinfo.html")
+        };
+
         tableBodyEl.appendChild(movierow);
     }
 }
 displaymovies();
+
+
+
+
+
+
+
