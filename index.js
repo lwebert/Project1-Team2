@@ -17,4 +17,12 @@ IndexSubmitEl.addEventListener('click', function (event) {
     }
 })
 
-
+function fillStars(ratingValue) {
+    stars.forEach(star => {
+        if (localStorage.getItem('movieRating') <= ratingValue) {
+            star.classList.add('filled');
+        } else {
+            star.classList.remove('filled');
+        }
+    });
+}

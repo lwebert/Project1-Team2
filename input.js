@@ -4,6 +4,7 @@ stars.forEach(star => {
     star.addEventListener('click', function () {
         const ratingValue = this.dataset.value;
         fillStars(ratingValue);
+        localStorage.setItem('movieRating', this.dataset.value);
     });
 });
 
@@ -18,16 +19,9 @@ function fillStars(ratingValue) {
 }
 
 
-
-//Load new movie title into input.html based on index.html
-const movieTitleEl = document.querySelector("#enter-movie-title"); //Element in input.html for the movie title
-let newTitle = readLocalStorageNewTitle();
-console.log(newTitle);
-console.log(typeof newTitle);
-console.log(newTitle[(newTitle.length -1)]);
-
-
-movieTitleEl.setAttribute('value', newTitle[(newTitle.length -1)]);
+//function to load new movie title into input.html based on index.html
+// const movieTitleEl = document.querySelector("#enter-movie-title"); //Element in input.html for the movie title
+// movieTitleEl.setAttribute('value', movieName);
 
 
 //input.html Submit button --> index.html
