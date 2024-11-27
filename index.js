@@ -52,6 +52,8 @@ function displaymovies() {
         movierow.appendChild(movieratingEl);
         movierow.appendChild(moviegenreEl);
 
+        // movierow.setAttribute('onClick', )
+
         tableBodyEl.appendChild(movierow);
     }
 }
@@ -59,21 +61,24 @@ function displaymovies() {
 displaymovies();
 
 
-//event listeners on each movie row to take it to movieinfo.html
+//event listener on table to take it to movieinfo.html
+const tableBodyEl = document.querySelector("#tableBody")
+tableBodyEl.addEventListener('click', function (event) {
+    let moviesdisplayed = document.querySelectorAll("tr");
+    console.log(moviesdisplayed);
+    console.log(moviesdisplayed.childNodes);
+
+    // for (i=0; i<moviesdisplayed; i++) {}
+
+})
 
 
-<<<<<<< HEAD
-
-//event listeners on each movie row to take it to movieinfo.html
 
 
-
-=======
 const stars = document.querySelectorAll('.star');
-    let rating = 0;
+let rating = 0;
 const savedRating = localStorage.getItem('rating');
 if (savedRating) {
-  rating = parseInt(savedRating);
-  fillStars(rating);
+    rating = parseInt(savedRating);
+    fillStars(rating);
 }
->>>>>>> 7e53843344f460a60439b0609159914ed4e08a73
