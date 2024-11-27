@@ -18,6 +18,7 @@ IndexSubmitEl.addEventListener('click', function (event) {
 })
 
 
+
 //Event listener to remove the value from input #new-movie
 const IndexNewMovie = document.querySelector("#new-movie");
 
@@ -61,4 +62,18 @@ displaymovies();
 //event listeners on each movie row to take it to movieinfo.html
 
 
+<<<<<<< HEAD
 
+//event listeners on each movie row to take it to movieinfo.html
+
+
+
+=======
+const stars = document.querySelectorAll('.star');
+    let rating = 0;
+const savedRating = localStorage.getItem('rating');
+if (savedRating) {
+  rating = parseInt(savedRating);
+  fillStars(rating);
+}
+>>>>>>> 7e53843344f460a60439b0609159914ed4e08a73
