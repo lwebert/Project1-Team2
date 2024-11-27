@@ -13,7 +13,7 @@ IndexSubmitEl.addEventListener('click', function (event) {
         let movietitle = { newMovieTitle };
         storeLocalStorageNewTitle(movietitle); //
 
-        location.assign("input.html") //redirect to input.html
+        location.assign("input.html"); //redirect to input.html
     }
 })
 
@@ -25,4 +25,7 @@ IndexNewMovie.addEventListener('click', function (event) {
     event.preventDefault();
     IndexNewMovie.setAttribute('value', "");
 })
+
+
+
 
