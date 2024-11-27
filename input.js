@@ -1,5 +1,5 @@
 const stars = document.querySelectorAll('.star');
-    let rating = 0;
+const error = document.getElementById('error');
 
     stars.forEach(star => {
       star.addEventListener('click', () => {
@@ -42,13 +42,19 @@ InputSubmitEl.addEventListener('click', function (event) {
     event.preventDefault();
 
     let movieTitle = document.querySelector("#enter-movie-title").value;
-    // let movieRating = document.querySelector("#movie-rating").value;
+    let movieRating = document.querySelector("#movie-rating").value;
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
 
     // if (!movieTitle || !movieRating || !movieGenre || !movieComments) {
     if (!movieTitle || !movieGenre || !movieComments) {
         //add pop-up saying to enter all information before submitting
+    
+        error.textContent = 'Please fill out all fields.';
+        setTimeout (() => {
+            error.textContent = '';
+        }, 3000);
+
     }
     else {
         let movie = {
