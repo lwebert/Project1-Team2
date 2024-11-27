@@ -40,10 +40,9 @@ function displaymovies() {
         let movienameEl = document.createElement('td');
         let movieratingEl = document.createElement('td');
         let moviegenreEl = document.createElement('td');
-
         //update values
         movienameEl.textContent = movies[i].movieTitle;
-        movieratingEl.textContent = "";
+        movieratingEl.innerHTML = "";
         moviegenreEl.textContent = movies[i].movieGenre;
 
         //display in table by creating new table row & appending
@@ -76,9 +75,18 @@ tableBodyEl.addEventListener('click', function (event) {
 
 
 const stars = document.querySelectorAll('.star');
-let rating = 0;
 const savedRating = localStorage.getItem('rating');
 if (savedRating) {
     rating = parseInt(savedRating);
     fillStars(rating);
+}
+
+function fillStars(value) {
+    stars.forEach(star => {
+      if (parseInt(star.getAttribute('data-value')) <= value) {
+        star.classList.add('filled');
+      } else {
+        star.classList.remove('filled');
+      }
+    });
 }
