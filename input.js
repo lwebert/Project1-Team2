@@ -1,4 +1,5 @@
 const stars = document.querySelectorAll('.star');
+const error = document.getElementById('error');
 
 stars.forEach(star => {
     star.addEventListener('click', function () {
@@ -44,6 +45,12 @@ InputSubmitEl.addEventListener('click', function (event) {
 
     if (!movieTitle || !movieRating || !movieGenre || !movieComments) {
         //add pop-up saying to enter all information before submitting
+    
+        error.textContent = 'Please fill out all fields.';
+        setTimeout (() => {
+            error.textContent = '';
+        }, 3000);
+
     }
     else {
         let movie = {
