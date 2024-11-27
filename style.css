@@ -46,6 +46,11 @@ footer {
   height: 2.5rem;
 }
 
+p {
+
+  color: white;
+}
+
 .star {
   cursor: pointer;
   font-size: 24px;
