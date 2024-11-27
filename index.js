@@ -13,8 +13,19 @@ IndexSubmitEl.addEventListener('click', function (event) {
         let movietitle = { newMovieTitle };
         storeLocalStorageNewTitle(movietitle); //
 
-        location.assign("input.html") //redirect to input.html
+        location.assign("input.html"); //redirect to input.html
     }
 })
+
+
+//Event listener to remove the value from input #new-movie
+const IndexNewMovie = document.querySelector("#new-movie");
+
+IndexNewMovie.addEventListener('click', function (event) {
+    event.preventDefault();
+    IndexNewMovie.setAttribute('value', "");
+})
+
+
 
 
