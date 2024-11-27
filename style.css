@@ -80,11 +80,10 @@ footer {
     background: #772014;
   }
 }
-*/
 
 /* Large smartphones - navbar changes color */
 @media screen and (max-width: 768px) {
-  nav {
+  #av {
     background-color: #bb8588;
   }
 }
