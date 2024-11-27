@@ -13,9 +13,29 @@ IndexSubmitEl.addEventListener('click', function (event) {
         let movietitle = { newMovieTitle };
         storeLocalStorageNewTitle(movietitle); //
 
-        location.assign("input.html") //redirect to input.html
+        location.assign("input.html"); //redirect to input.html
     }
 })
+
+function fillStars(ratingValue) {
+    stars.forEach(star => {
+        if (localStorage.getItem('movieRating') <= ratingValue) {
+            star.classList.add('filled');
+        } else {
+            star.classList.remove('filled');
+        }
+    });
+}
+
+//Event listener to remove the value from input #new-movie
+const IndexNewMovie = document.querySelector("#new-movie");
+
+IndexNewMovie.addEventListener('click', function (event) {
+    event.preventDefault();
+    IndexNewMovie.setAttribute('value', "");
+})
+
+
 
 function fillStars(ratingValue) {
     stars.forEach(star => {
