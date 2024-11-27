@@ -1,6 +1,6 @@
 //index.html Submit button redirect to input.html
 const IndexSubmitEl = document.querySelector("#index-submit"); //Submit button on index.html
-
+const error = document.getElementById('error1');
 IndexSubmitEl.addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -8,6 +8,10 @@ IndexSubmitEl.addEventListener('click', function (event) {
 
     if (!newMovieTitle) {
         //add pop-up saying to enter movie title!
+        error.textContent = 'Please enter movie title.';
+        setTimeout (() => {
+            error.textContent = '';
+        }, 3000);
     }
     else {
         let movietitle = { newMovieTitle };
