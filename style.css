@@ -73,12 +73,24 @@ footer {
   color: gold;
 }
 
+label:hover {
+
+  background-color: #772014;
+  transition: 0.2s;
+}
+
+h2:hover {
+  background-color: #772014;
+  transition: 0.2s;
+
+}
+
 @media screen and (max-width: 992px) {
   header {
     background: #772014;
   }
 }
-*/
+
 
 /* Large smartphones - navbar changes color */
 @media screen and (max-width: 768px) {
