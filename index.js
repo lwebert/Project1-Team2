@@ -17,9 +17,10 @@ IndexSubmitEl.addEventListener('click', function (event) {
     }
 })
 
+const stars = document.querySelectorAll('.star');
 function fillStars(ratingValue) {
     stars.forEach(star => {
-        if (localStorage.getItem('movieRating') <= ratingValue) {
+        if (localStorage.getItem('movieRating') <= dataset.value) {
             star.classList.add('filled');
         } else {
             star.classList.remove('filled');
@@ -34,15 +35,3 @@ IndexNewMovie.addEventListener('click', function (event) {
     event.preventDefault();
     IndexNewMovie.setAttribute('value', "");
 })
-
-
-
-function fillStars(ratingValue) {
-    stars.forEach(star => {
-        if (localStorage.getItem('movieRating') <= ratingValue) {
-            star.classList.add('filled');
-        } else {
-            star.classList.remove('filled');
-        }
-    });
-}
