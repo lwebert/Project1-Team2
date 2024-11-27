@@ -43,7 +43,7 @@ InputSubmitEl.addEventListener('click', function (event) {
     event.preventDefault();
 
     let movieTitle = document.querySelector("#enter-movie-title").value;
-    // let movieRating = document.querySelector("#movie-rating").value;
+    let movieRating = document.querySelector("#movie-rating").value;
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
 
