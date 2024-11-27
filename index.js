@@ -58,3 +58,7 @@ function displaymovies() {
 displaymovies();
 
 
+//event listeners on each movie row to take it to movieinfo.html
+
+
+
