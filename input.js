@@ -1,23 +1,32 @@
 const stars = document.querySelectorAll('.star');
+    let rating = 0;
 const error = document.getElementById('error');
 
-stars.forEach(star => {
-    star.addEventListener('click', function () {
-        const ratingValue = this.dataset.value;
-        fillStars(ratingValue);
-    });
-});
-
-function fillStars(ratingValue) {
     stars.forEach(star => {
-        if (star.dataset.value <= ratingValue) {
-            star.classList.add('filled');
-        } else {
-            star.classList.remove('filled');
-        }
-    });
-}
+      star.addEventListener('click', () => {
+        rating = parseInt(star.getAttribute('data-value'));
+        fillStars(rating);
+        localStorage.setItem('rating', rating);
+      });
 
+      star.addEventListener('mouseover', () => {
+        fillStars(parseInt(star.getAttribute('data-value')));
+      });
+
+      star.addEventListener('mouseout', () => {
+        fillStars(rating);
+      });
+    });
+
+    function fillStars(value) {
+      stars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= value) {
+          star.classList.add('filled');
+        } else {
+          star.classList.remove('filled');
+        }
+      });
+    }
 
 
 //Load new movie title into input.html based on index.html
