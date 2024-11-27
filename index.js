@@ -18,3 +18,11 @@ IndexSubmitEl.addEventListener('click', function (event) {
 })
 
 
+//Event listener to remove the value from input #new-movie
+const IndexNewMovie = document.querySelector("#new-movie");
+
+IndexNewMovie.addEventListener('click', function (event) {
+    event.preventDefault();
+    IndexNewMovie.setAttribute('value', "");
+})
+
