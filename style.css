@@ -95,3 +95,8 @@ h2:hover {
     background-color: rgba(0, 0, 255, 0.726);
   }
 }
+
+.modal-footer {
+
+  background-color: rgb(164, 164, 164);
+}
