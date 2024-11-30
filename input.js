@@ -1,5 +1,5 @@
 const stars = document.querySelectorAll('.star');
-const error = document.getElementById('error');
+const modalBody = document.querySelector('.modal-body'); //This is the variable to manipulate the modal.
 
 stars.forEach(star => {
     star.addEventListener('click', () => {
@@ -45,14 +45,14 @@ InputSubmitEl.addEventListener('click', function (event) {
     let movieRating = rating;
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
-
-    // if (!movieTitle || !movieRating || !movieGenre || !movieComments) {
-    if (!movieTitle || !movieRating|| !movieGenre || !movieComments) {
+    
+    // if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
+    if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
         //add pop-up saying to enter all information before submitting
     
-        error.textContent = 'Please fill out all fields.';
+        modalBody.textContent = 'Please fill out all fields.';
         setTimeout (() => {
-            error.textContent = '';
+            
         }, 3000);
 
     }
@@ -62,8 +62,12 @@ InputSubmitEl.addEventListener('click', function (event) {
             movieTitle, movieRating, movieGenre, movieComments
         };
 
-        storeLocalStorage(movie); //
+        modalBody.textContent = 'Success. You have succesfully submitted all the movie information. You will be redirected to the Home page.';
+        setTimeout (() => {
+            location.assign("index.html") //Redirect to the Home Page after 5 seconds.
+        }, 5000);
 
-        location.assign("index.html") //redirect to index.html
+        storeLocalStorage(movie);
+
     }
 })
