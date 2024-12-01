@@ -38,6 +38,7 @@ function storeLocalStorageNewTitle(title) {
 
 
 
+
 //Function to read & store local storage - for getting specific movie info from table
 function readLocalStorageMovieInfo() {
     let info = JSON.parse(localStorage.getItem('movieinfo')) //using local storage key name "movieinfo"

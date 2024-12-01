@@ -30,10 +30,15 @@ function fillStars(value) {
 
 //Load new movie title into input.html based on index.html
 const movieTitleEl = document.querySelector("#enter-movie-title"); //Element in input.html for the movie title
-let newTitle = readLocalStorageNewTitle();
+function loadMovieTitle() {
+    let newTitle = readLocalStorageNewTitle();
 
-movieTitleEl.setAttribute('value', newTitle[(newTitle.length - 1)].newMovieTitle); //automatically set the movie title to the last movie title you stored in local storage from index.html
-
+    if (!newTitle) { }
+    else {
+        movieTitleEl.setAttribute('value', newTitle[(newTitle.length - 1)].newMovieTitle); //automatically set the movie title to the last movie title you stored in local storage from index.html
+    }
+}
+loadMovieTitle();
 
 //input.html Submit button --> index.html
 const InputSubmitEl = document.querySelector("#input-submit");
@@ -45,14 +50,14 @@ InputSubmitEl.addEventListener('click', function (event) {
     let movieRating = rating;
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
-    
+
     // if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
     if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
         //add pop-up saying to enter all information before submitting
-    
+
         modalBody.textContent = 'Please fill out all fields.';
-        setTimeout (() => {
-            
+        setTimeout(() => {
+
         }, 3000);
 
     }
@@ -63,7 +68,7 @@ InputSubmitEl.addEventListener('click', function (event) {
         };
 
         modalBody.textContent = 'Success. You have succesfully submitted all the movie information. You will be redirected to the Home page.';
-        setTimeout (() => {
+        setTimeout(() => {
             location.assign("index.html") //Redirect to the Home Page after 5 seconds.
         }, 5000);
 
