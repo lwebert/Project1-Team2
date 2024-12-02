@@ -9,7 +9,7 @@ IndexSubmitEl.addEventListener('click', function (event) {
     if (!newMovieTitle) {
         //add pop-up saying to enter movie title!
         error.textContent = 'Please enter movie title.';
-        setTimeout (() => {
+        setTimeout(() => {
             error.textContent = '';
         }, 3000);
     }
@@ -33,8 +33,9 @@ IndexNewMovie.addEventListener('click', function (event) {
 
 
 //Display movies from local storage
+const tableBodyEl = document.querySelector("#tableBody")
+
 function displaymovies() {
-    const tableBodyEl = document.querySelector("#tableBody")
     let movies = readLocalStorage();
     console.log(`Number of movies to display is ${movies.length}.`);
     for (i = 0; i < movies.length; i++) {
@@ -55,26 +56,32 @@ function displaymovies() {
         movierow.appendChild(movieratingEl);
         movierow.appendChild(moviegenreEl);
 
-        movierow.onclick = function () {
-            //LEAVE all of this for now, Lauren is working on making it go to movieinfo.index based on where you click on the table
-            
-            // console.log(movierow);
-            // console.log(movierow.children);
-            // console.log(movierow.children.length);
-            // console.log(movierow.children[2].textContent);
-
-            // storeLocalStorageMovieInfo(movierow);
-            // location.assign("movieinfo.html")
-        };
-
         tableBodyEl.appendChild(movierow);
+
+        movierow.onclick = function () {
+            // console.log(movierow.children[0].textContent);
+            let movietitlerow = movierow.children[0].textContent;
+            let tempStorage = readLocalStorage();
+
+            for (i = 0; i < tempStorage.length; i++) {
+
+                if (tempStorage[i].movieTitle == movietitlerow) {
+                    let infoTitle = tempStorage[i].movieTitle;
+                    let infoRating = tempStorage[i].movieRating;
+                    let infoGenre = tempStorage[i].movieGenre;
+                    let infoComment = tempStorage[i].movieComments;
+
+                    let infomovie = { infoTitle, infoRating, infoGenre, infoComment };
+
+                    storeLocalStorageMovieInfo(infomovie);
+                }
+            }
+
+            location.assign("movieinfo.html");
+        };
     }
 }
 displaymovies();
-
-
-
-
 
 
 
