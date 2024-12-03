@@ -34,11 +34,12 @@ const movieTitleEl = document.querySelector("#enter-movie-title"); //Element in 
 function loadMovieTitle() {
     let newTitle = readLocalStorageNewTitle();
 
-    if (!newTitle) { }
+    if (newTitle == "") { }
     else {
         movieTitleEl.setAttribute('value', newTitle[(newTitle.length - 1)].newMovieTitle); //automatically set the movie title to the last movie title you stored in local storage from index.html
     }
 }
+
 loadMovieTitle();
 
 //input.html Submit button --> index.html
@@ -51,7 +52,7 @@ InputSubmitEl.addEventListener('click', function (event) {
     let movieRating = rating;
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
-    
+
     // if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
     if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
         //add pop-up saying to enter all information before submitting
@@ -62,29 +63,29 @@ InputSubmitEl.addEventListener('click', function (event) {
         }, 3000);
 
     }
-    
-    else if (existingMovie.some(item => item.movieTitle === movieTitle)) {
-        //add pop-up for duplicate movie titles
-
-        modalBody.textContent = 'Movie already exists.';
-        setTimeout(() => {
-
-        }, 3000);
-
-    }
-
 
     else {
-        let movie = {
-            // movieTitle, movieRating, movieGenre, movieComments
-            movieTitle, movieRating, movieGenre, movieComments
-        };
+        if (existingMovie && (existingMovie.some(item => item.movieTitle === movieTitle))) {
+            //add pop-up for duplicate movie titles
 
-        modalBody.textContent = 'Success. You have succesfully submitted all the movie information. You will be redirected to the Home page.';
-        setTimeout(() => {
-            location.assign("index.html") //Redirect to the Home Page after 5 seconds.
-        }, 5000);
+            modalBody.textContent = 'Movie already exists.';
+            setTimeout(() => {
 
-        storeLocalStorage(movie);
+            }, 3000);
+        }
 
-    }})
+        else {
+            let movie = {
+                // movieTitle, movieRating, movieGenre, movieComments
+                movieTitle, movieRating, movieGenre, movieComments
+            };
+
+            modalBody.textContent = 'Success. You have succesfully submitted all the movie information. You will be redirected to the Home page.';
+            setTimeout(() => {
+                location.assign("index.html") //Redirect to the Home Page after 5 seconds.
+            }, 3000);
+
+            storeLocalStorage(movie);
+        }
+    }
+})

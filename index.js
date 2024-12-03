@@ -4,9 +4,7 @@ const error = document.getElementById('error1');
 const modalBody = document.querySelector('.modal-body');
 let existingMovie = JSON.parse(localStorage.getItem('movies'));
 
-IndexSubmitEl.addEventListener('click', function (event) {
-    event.preventDefault();
-
+function submitnewmovie() {
     let newMovieTitle = document.querySelector("#new-movie").value;
 
     if (!newMovieTitle) {
@@ -17,24 +15,30 @@ IndexSubmitEl.addEventListener('click', function (event) {
         }, 3000);
     }
 
-    else if (existingMovie.some(item => item.movieTitle === newMovieTitle)) {
-        //add pop-up for duplicate movie titles
+    else if (newMovieTitle) {
+        if (existingMovie && (existingMovie.some(item => item.movieTitle === newMovieTitle))) {
+            //add pop-up for duplicate movie titles
 
-        modalBody.textContent = 'Movie already exists.';
-        setTimeout(() => {
+            modalBody.textContent = 'Movie already exists.';
+            setTimeout(() => {
 
-        }, 3000);
+            }, 3000);
+        }
 
+        else {
+            let movietitle = { newMovieTitle };
+            storeLocalStorageNewTitle(movietitle); //
+
+            location.assign("input.html"); //redirect to input.html 
+        }
     }
+};
 
-    else {
-        let movietitle = { newMovieTitle };
-        storeLocalStorageNewTitle(movietitle); //
 
-        location.assign("input.html"); //redirect to input.html
-    }
+IndexSubmitEl.addEventListener('click', function (event) {
+    event.preventDefault();
+    submitnewmovie();
 })
-
 
 
 //Event listener to remove the value from input #new-movie
@@ -45,16 +49,20 @@ IndexNewMovie.addEventListener('click', function (event) {
     IndexNewMovie.setAttribute('value', "");
 })
 
+IndexNewMovie.addEventListener('keypress', function (enter) {
+    if (enter.key == "Enter") {
+        enter.preventDefault();
+        submitnewmovie();
+    }
+})
+
 
 //Display movies from local storage
 const tableBodyEl = document.querySelector("#tableBody")
 
 function displaymovies() {
     let movies = readLocalStorage();
-    console.log(`Number of movies to display is ${movies.length}.`);
     for (i = 0; i < movies.length; i++) {
-        // console.log(movies[i]);
-
         //create table elements
         let movienameEl = document.createElement('td');
         let movieratingEl = document.createElement('td');
@@ -73,7 +81,6 @@ function displaymovies() {
         tableBodyEl.appendChild(movierow);
 
         movierow.onclick = function () {
-            // console.log(movierow.children[0].textContent);
             let movietitlerow = movierow.children[0].textContent;
             let tempStorage = readLocalStorage();
 
