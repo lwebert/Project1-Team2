@@ -1,6 +1,9 @@
 //index.html Submit button redirect to input.html
 const IndexSubmitEl = document.querySelector("#index-submit"); //Submit button on index.html
 const error = document.getElementById('error1');
+const modalBody = document.querySelector('.modal-body');
+let existingMovie = JSON.parse(localStorage.getItem('movies'));
+
 IndexSubmitEl.addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -8,11 +11,22 @@ IndexSubmitEl.addEventListener('click', function (event) {
 
     if (!newMovieTitle) {
         //add pop-up saying to enter movie title!
-        error.textContent = 'Please enter movie title.';
+        modalBody.textContent = 'Please enter movie title.';
         setTimeout(() => {
-            error.textContent = '';
+
         }, 3000);
     }
+
+    else if (existingMovie.some(item => item.movieTitle === newMovieTitle)) {
+        //add pop-up for duplicate movie titles
+
+        modalBody.textContent = 'Movie already exists.';
+        setTimeout(() => {
+
+        }, 3000);
+
+    }
+
     else {
         let movietitle = { newMovieTitle };
         storeLocalStorageNewTitle(movietitle); //
@@ -47,7 +61,7 @@ function displaymovies() {
         let moviegenreEl = document.createElement('td');
         //update values
         movienameEl.textContent = movies[i].movieTitle;
-        movieratingEl.textContent = movies[i].movieRating, "★";
+        movieratingEl.textContent = movies[i].movieRating;
         moviegenreEl.textContent = movies[i].movieGenre;
 
         //display in table by creating new table row & appending
