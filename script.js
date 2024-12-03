@@ -18,7 +18,6 @@ function storeLocalStorage(movie) {
 
 
 
-
 //functions to read & store local storage for new movie name index.html to input.html
 function readLocalStorageNewTitle() {
     let title = JSON.parse(localStorage.getItem('newtitle')) //using local storage key name "newtitle"
@@ -34,9 +33,6 @@ function storeLocalStorageNewTitle(title) {
     newTitle.push(title); //Add new movie to array
     localStorage.setItem('newtitle', JSON.stringify(newTitle)); //Re-save the updated array to local storage
 }
-
-
-
 
 
 //Function to read & store local storage - for getting specific movie info from table
