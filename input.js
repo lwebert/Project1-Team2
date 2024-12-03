@@ -1,5 +1,6 @@
 const stars = document.querySelectorAll('.star');
 const modalBody = document.querySelector('.modal-body'); //This is the variable to manipulate the modal.
+let existingMovie = JSON.parse(localStorage.getItem('movies'));
 
 stars.forEach(star => {
     star.addEventListener('click', () => {
@@ -62,7 +63,16 @@ InputSubmitEl.addEventListener('click', function (event) {
 
     }
     
-    
+    else if (existingMovie.some(item => item.movieTitle === movieTitle)) {
+        //add pop-up for duplicate movie titles
+
+        modalBody.textContent = 'Movie already exists.';
+        setTimeout(() => {
+
+        }, 3000);
+
+    }
+
 
     else {
         let movie = {
