@@ -13,7 +13,7 @@ In the third page the users are able to see the details of every movie they've s
 
 The website has three pages: Main, Input and Movie Info. The user can navigate through every page.
 
-In the Main page, the user can see the name of the website, followed by 
+In the Main page, the user can see all of the movies they have input into the web application. The movie title, rating and genre are displayed, and the movies are sorted by the order in which they were input into the site. To see the comments added for a specific movie, the user can simply click anywhere in the movie's row (i.e., click the title, rating or genre), and the user will be taken to the MovieInfo.html. To add a new movie, the user can type in a new movie title on index.html, and click submit to be redirected to input.html. The movie title will then be automatically filled in, and the user can input the movie rating, genre and comments manually before clicking submit and being redirected back to the home page, where this new movie will be displayed.
 
 ## Credits
 
