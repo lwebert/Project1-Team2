@@ -83,7 +83,7 @@ InputSubmitEl.addEventListener('click', function (event) {
             modalBody.textContent = 'Success. You have succesfully submitted all the movie information. You will be redirected to the Home page.';
             setTimeout(() => {
                 location.assign("index.html") //Redirect to the Home Page after 5 seconds.
-            }, 3000);
+            }, 5000);
 
             storeLocalStorage(movie);
         }
