@@ -104,3 +104,7 @@ a {
 a:hover {
   color: #772014;
 }
+
+tr {
+    cursor: pointer;
+}
