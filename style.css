@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: rgb(58, 57, 57);
+  background-color: rgb(83, 83, 83);
 }
 
 header,
@@ -20,7 +20,7 @@ main {
   color: white;
   text-align: center;
   align-items: center;
-  line-height: 35px;
+  line-height: 30px;
 }
 
 section {
@@ -47,7 +47,6 @@ footer {
 }
 
 p {
-
   color: white;
 }
 
@@ -62,7 +61,6 @@ p {
 }
 
 label:hover {
-
   background-color: #772014;
   transition: 0.2s;
 }
@@ -70,7 +68,6 @@ label:hover {
 h2:hover {
   background-color: #772014;
   transition: 0.2s;
-
 }
 
 @media screen and (max-width: 992px) {
@@ -97,8 +94,7 @@ h2:hover {
 }
 
 .modal-footer {
-
-  background-color: rgb(164, 164, 164);
+  background-color: rgb(175, 174, 174);
 }
 
 a {
@@ -106,5 +102,5 @@ a {
 }
 
 a:hover {
-  color: #772014
+  color: #772014;
 }
