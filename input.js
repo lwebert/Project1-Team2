@@ -50,7 +50,7 @@ InputSubmitEl.addEventListener('click', function (event) {
     let movieRating = rating;
     let movieGenre = document.querySelector("#genre").value;
     let movieComments = document.querySelector("#comments").value;
-
+    
     // if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
     if (!movieTitle || isNaN(movieRating) || !movieGenre || !movieComments) {
         //add pop-up saying to enter all information before submitting
@@ -61,6 +61,9 @@ InputSubmitEl.addEventListener('click', function (event) {
         }, 3000);
 
     }
+    
+    
+
     else {
         let movie = {
             // movieTitle, movieRating, movieGenre, movieComments
@@ -74,5 +77,4 @@ InputSubmitEl.addEventListener('click', function (event) {
 
         storeLocalStorage(movie);
 
-    }
-})
+    }})
