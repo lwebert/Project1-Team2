@@ -8,7 +8,7 @@ function submitnewmovie() {
 
     if (!newMovieTitle) {
         //add pop-up saying to enter movie title!
-        modalBody.textContent = 'Please enter movie title.';
+        error.textContent = 'Please enter movie title.';
         setTimeout(() => {
 
         }, 3000);
@@ -18,7 +18,7 @@ function submitnewmovie() {
         if (existingMovie && (existingMovie.some(item => item.movieTitle === newMovieTitle))) {
             //add pop-up for duplicate movie titles
 
-            modalBody.textContent = 'Movie already exists.';
+            error.textContent = 'Movie already exists.';
             setTimeout(() => {
 
             }, 3000);
