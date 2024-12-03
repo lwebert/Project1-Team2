@@ -8,6 +8,8 @@ We've improved our coding skills, because we have built a solid HTML structure w
 
 Along with this, we acquired knowledge of team collaboration, because when we were working with the Git version control, we had to resolve some merge conflicts when pulling or pushing code. Also, as a team, we applied Agile Software Development methologies to our web application, bacause we planned our website, then we coded, we were building the website, we tested it, and then we released it. In addition to this, as we were coding we added comments in our code, so our team, as well as future developers, can understand the code functionality.
 
+Deployed application url: https://lwebert.github.io/Project1-Team2/
+
 ## Table of Contents
 
 - [Usage](#usage)
