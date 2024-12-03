@@ -10,12 +10,9 @@ Along with this, we acquired knowledge of team collaboration, because when we we
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-
-## Installation
 
 ## Usage
 
@@ -23,9 +20,28 @@ The website has three pages: Main, Input and Movie Info. The user can navigate t
 
 In the Main page, the user can see the name of the website, followed by the "Enter new movie name" box, and the movie list stored in local storage. The user can enter the movie title and hit the Submit button, which will redirect the user to the Input page.
 
+
+![alt text](./assets/images/Main.png)
+
 In the Input page, the user is able to enter more movie information, such as rating, genre and comments. All the information can be stored by hitting the Submit button. At the very botton of the page, there is a hyperlink button that directs a user back to the Main page. When a user submits all the movie information needed to continue, there is a popup notification (Modal) displayed on the screen that tells a user that the information has been successfully submitted. The popup notification will be visible for five seconds, and after that, the user will be redirected to the Main page, where the new submitted movie information will be displayed.
 
+
+![alt text](assets/images/Input.png)
+
+
+
+![alt text](assets/images/Popup.png)
+
+
 In the Movie Info page, the movie information is displayed with more details about it, such as comments. The user is able to access this page by clicking on the movie list located in the Main page. At the botton of the Movie Info page, there are two hyperlink buttons, which can redirect the user to either the Main page, or the Input page. It's very important to say that every text field must be filled out, otherwise, an error message will be displayed to the user, indicating that in order to proceed, all the text fields must be filled in.
+
+
+![alt text](assets/images/MovieInfo.png)
+
+
+
+![alt text](assets/images/Error.png)
+
 
 ## Credits
 
