@@ -1,9 +1,7 @@
 //index.html Submit button redirect to input.html
 const IndexSubmitEl = document.querySelector("#index-submit"); //Submit button on index.html
 const error = document.getElementById('error1');
-const modalBody = document.querySelector('.modal-body');
 let existingMovie = JSON.parse(localStorage.getItem('movies'));
-
 IndexSubmitEl.addEventListener('click', function (event) {
     event.preventDefault();
 
