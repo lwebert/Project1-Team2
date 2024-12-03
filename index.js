@@ -6,7 +6,7 @@ let existingMovie = JSON.parse(localStorage.getItem('movies'));
 function submitnewmovie() {
     let newMovieTitle = document.querySelector("#new-movie").value;
 
-    if (!newMovieTitle) {
+    if (!newMovieTitle || newMovieTitle === 'Add new movie title') {
         //add pop-up saying to enter movie title!
         error.textContent = 'Please enter movie title.';
         setTimeout(() => {
